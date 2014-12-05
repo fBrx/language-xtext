@@ -1,0 +1,59 @@
+'scopeName': 'source.xtext'
+'name': 'Xtext'
+'fileTypes': [
+  'xtext'
+]
+'patterns': [
+    {
+        'include': '#comments'
+    },{
+        'name' : 'constant.language.xtext';
+        'match' : 'grammar|generate|with';
+    },{
+        'name' : 'string.quoted.double';
+        'begin' : '\\"';
+        'end' : '\\"';
+    },{
+        'name' : 'string.quoted.single';
+        'begin' : "\\'";
+        'end' : "\\'";
+    },{
+        'name' : 'meta.import.xtext';
+        'match' : '^(import)\\s+(.+)\\s(as)\\s(.*)$';
+        'captures' :
+            '1' :
+                'name' : 'constant.language.xtext'
+            '2' :
+                'name' : 'string.quoted.double'
+            '3' :
+                'name' : 'constant.language.xtext'
+            '4' :
+                'name' : 'entity.name.type'
+    },{
+        'name': 'meta.type.xtext';
+        'begin': '^(\\S+)(:)';
+        'beginCaptures':
+            '1' :
+                'name': 'entity.name.type'
+            '2' :
+                'name': 'punctuation.separator.xtext'
+        'end': '(;)';
+        'endCaptures' :
+            '1' :
+                'name' : 'punctuation.terminator.xtext'
+        'include' : '#comments';
+    }
+]
+'repository':
+    'comments':
+        'patterns': [
+            {
+                'name' : 'comment.line.inline';
+                'begin' : '/\\*';
+                'end' : '\\*/';
+            },{
+                'name' : 'comment.line.double-slash';
+                'begin' : '//';
+                'end' : '$';
+            }
+        ]

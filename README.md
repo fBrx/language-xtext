@@ -1,4 +1,5 @@
-language-xtext
-==============
+# language-xtext package
 
-Adds Xtext support to Atom
+Adds syntax highlighting for [Xtext](http://www.eclipse.org/Xtext/) files to Atom.
+
+Contributions of any kind are always welcome.
