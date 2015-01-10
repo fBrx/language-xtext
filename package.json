@@ -1,8 +1,8 @@
 {
   "name": "language-xtext",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Language support for Xtext in Atom",
-  "repository": "https://github.com/atom/language-xtext",
+  "repository": "https://github.com/fBrx/language-xtext",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
